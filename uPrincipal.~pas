@@ -68,6 +68,7 @@ uses ufrmPesagem;
 
 procedure TForm1.Expedio1Click(Sender: TObject);
 begin
+Application.CreateForm(TForm2, Form2);
 form2.show;
 end;
 

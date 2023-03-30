@@ -50,6 +50,9 @@ type
     ToolButton19: TToolButton;
     ComboBox1: TComboBox;
     ImageList1: TImageList;
+    ToolBar2: TToolBar;
+    ToolButton20: TToolButton;
+    ToolButton21: TToolButton;
     procedure Expedio1Click(Sender: TObject);
   private
     { Private declarations }
