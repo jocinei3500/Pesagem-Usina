@@ -53,7 +53,9 @@ type
     ToolBar2: TToolBar;
     ToolButton20: TToolButton;
     ToolButton21: TToolButton;
+    ImageList2: TImageList;
     procedure Expedio1Click(Sender: TObject);
+    procedure ToolButton21Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,6 +72,12 @@ uses ufrmPesagem;
 {$R *.dfm}
 
 procedure TForm1.Expedio1Click(Sender: TObject);
+begin
+Application.CreateForm(TForm2, Form2);
+form2.show;
+end;
+
+procedure TForm1.ToolButton21Click(Sender: TObject);
 begin
 Application.CreateForm(TForm2, Form2);
 form2.show;
