@@ -79,8 +79,9 @@ end;
 
 procedure TForm1.ToolButton21Click(Sender: TObject);
 begin
-Application.CreateForm(TForm2, Form2);
-form2.show;
+if (form2 = Nil) then
+Application.CreateForm(Tform2,form2);
+form2.Show;
 end;
 
 end.

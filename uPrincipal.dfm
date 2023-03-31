@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 236
+  Left = 229
   Top = 138
-  Width = 1088
+  Width = 1095
   Height = 563
   Caption = 'Sistema de Pesagem - Usina de afalto Bresola Ltda'
   Color = clBtnFace
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  FormStyle = fsMDIForm
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poDefault
@@ -21,7 +22,7 @@ object Form1: TForm1
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 1072
+    Width = 1079
     Height = 35
     ButtonHeight = 28
     ButtonWidth = 28
@@ -171,7 +172,7 @@ object Form1: TForm1
     end
   end
   object ToolBar2: TToolBar
-    Left = 984
+    Left = 991
     Top = 35
     Width = 88
     Height = 469
@@ -259,8 +260,8 @@ object Form1: TForm1
     end
   end
   object ImageList1: TImageList
-    Left = 40
-    Top = 80
+    Left = 48
+    Top = 96
     Bitmap = {
       494C010104000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
@@ -668,8 +669,8 @@ object Form1: TForm1
   object ImageList2: TImageList
     Height = 85
     Width = 85
-    Left = 240
-    Top = 144
+    Left = 104
+    Top = 88
     Bitmap = {
       494C010102000400040055005500FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000005401000055000000010020000000000090C3
