@@ -7,40 +7,39 @@ uses
   Dialogs, StdCtrls, ExtCtrls, DBCtrls, CPort;
 
 type
-  TForm2 = class(TForm)
+  TfrmPesagem = class(TForm)
     Panel1: TPanel;
     Button1: TButton;
     Button2: TButton;
     Label1: TLabel;
-    Edit1: TEdit;
+    edID: TEdit;
     Label2: TLabel;
     Label3: TLabel;
     edMotorista: TLabel;
     dblPlaca: TDBLookupComboBox;
-    DBLookupComboBox1: TDBLookupComboBox;
-    DBLookupComboBox2: TDBLookupComboBox;
+    dblMotorista: TDBLookupComboBox;
+    dblCarreta: TDBLookupComboBox;
     GroupBox1: TGroupBox;
     Label4: TLabel;
-    Edit2: TEdit;
+    edDataEntrada: TEdit;
     Label5: TLabel;
-    Edit3: TEdit;
-    Memo1: TMemo;
+    edHoraEntrada: TEdit;
+    edObs: TMemo;
     Label6: TLabel;
     Label7: TLabel;
-    Edit4: TEdit;
+    edDataSaida: TEdit;
     Label8: TLabel;
-    Edit5: TEdit;
+    edHoraSaida: TEdit;
     GroupBox2: TGroupBox;
     Label9: TLabel;
     Label12: TLabel;
-    Edit6: TEdit;
-    Edit8: TEdit;
-    Edit9: TEdit;
-    Edit7: TEdit;
+    edIdClienteForn: TEdit;
+    edIdTransp: TEdit;
+    edTransp: TEdit;
+    edFornCli: TEdit;
     GroupBox3: TGroupBox;
     Label10: TLabel;
     Label11: TLabel;
-    Edit10: TEdit;
     Edit11: TEdit;
     Label13: TLabel;
     Edit14: TEdit;
@@ -49,9 +48,12 @@ type
     Edit13: TEdit;
     Label16: TLabel;
     ComPort1: TComPort;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure ComPort1RxChar(Sender: TObject; Count: Integer);
+    procedure FormCreate(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -59,31 +61,57 @@ type
   end;
 
 var
-  Form2: TForm2;
+  frmPesagem: TfrmPesagem;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+
+function retirarZeros( texto : string ): string;
+
+begin
+   while ( pos( '0', texto ) = 1) do
+    begin
+      texto := copy( texto, 2, length( texto ) );
+    end;
+    if(length(trim(texto)) =0)then
+      texto:='0' ;
+  result:=texto
+
+
+end;
+
+procedure TfrmPesagem.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 action := CaFree;
 Release;
-form2:= Nil;
+frmPesagem:= Nil;
 end;
 
-procedure TForm2.FormShow(Sender: TObject);
+procedure TfrmPesagem.FormShow(Sender: TObject);
 begin
 ComPort1.Open;
 end;
 
-procedure TForm2.ComPort1RxChar(Sender: TObject; Count: Integer);
+procedure TfrmPesagem.ComPort1RxChar(Sender: TObject; Count: Integer);
 var
   Str: String;
 begin
-ComPort1.ReadStr(Str, Count);
+  ComPort1.ReadStr(Str, 8);
   Str:=Copy(Str,2,length(Str));
-    edit13.Text :=Str;
+  Edit13.Text :=retirarZeros(Str);
+end;
+
+
+
+
+
+
+
+procedure TfrmPesagem.FormCreate(Sender: TObject);
+begin
+  Syslocale.MiddleEast:=true;
 end;
 
 end.

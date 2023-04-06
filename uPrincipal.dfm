@@ -1,8 +1,8 @@
-object Form1: TForm1
-  Left = 229
-  Top = 138
+object frmPrincipal: TfrmPrincipal
+  Left = 196
+  Top = 115
   Width = 1095
-  Height = 563
+  Height = 642
   Caption = 'Sistema de Pesagem - Usina de afalto Bresola Ltda'
   Color = clBtnFace
   DefaultMonitor = dmMainForm
@@ -17,6 +17,7 @@ object Form1: TForm1
   Position = poDefault
   Visible = True
   WindowState = wsMaximized
+  WindowMenu = Administrao1
   PixelsPerInch = 96
   TextHeight = 13
   object ToolBar1: TToolBar
@@ -175,7 +176,7 @@ object Form1: TForm1
     Left = 991
     Top = 35
     Width = 88
-    Height = 469
+    Height = 548
     Align = alRight
     ButtonHeight = 91
     ButtonWidth = 92
@@ -244,6 +245,13 @@ object Form1: TForm1
           Caption = 'Cadastro de Produtos'
         end
       end
+      object Veculos1: TMenuItem
+        Caption = 'Ve'#237'culos'
+        object Placas1: TMenuItem
+          Caption = 'Placas'
+          OnClick = Placas1Click
+        end
+      end
     end
     object Produo1: TMenuItem
       Caption = 'Produ'#231#227'o'
@@ -260,8 +268,8 @@ object Form1: TForm1
     end
   end
   object ImageList1: TImageList
-    Left = 48
-    Top = 96
+    Left = 56
+    Top = 88
     Bitmap = {
       494C010104000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
@@ -672,7 +680,7 @@ object Form1: TForm1
     Left = 104
     Top = 88
     Bitmap = {
-      494C010102000400040055005500FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
+      494C010102000400040055005500FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000005401000055000000010020000000000090C3
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4405,6 +4413,7 @@ object Form1: TForm1
       FFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000000000000000000000000000
       00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000000000000
       00000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFC000000000000000000000000000000000000000000000}
+      FFFFFFFFFFC00000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000}
   end
 end

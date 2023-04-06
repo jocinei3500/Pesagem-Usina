@@ -7,7 +7,7 @@ uses
   Dialogs, Menus, ComCtrls, ToolWin, DBCtrls, StdCtrls, ImgList;
 
 type
-  TForm1 = class(TForm)
+  TfrmPrincipal = class(TForm)
     MainMenu1: TMainMenu;
     Uilitrios1: TMenuItem;
     Administrao1: TMenuItem;
@@ -54,8 +54,11 @@ type
     ToolButton20: TToolButton;
     ToolButton21: TToolButton;
     ImageList2: TImageList;
+    Veculos1: TMenuItem;
+    Placas1: TMenuItem;
     procedure Expedio1Click(Sender: TObject);
     procedure ToolButton21Click(Sender: TObject);
+    procedure Placas1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,25 +66,32 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
-uses ufrmPesagem;
+uses ufrmPesagem, uData, uFrmCadPlaca;
 
 {$R *.dfm}
 
-procedure TForm1.Expedio1Click(Sender: TObject);
+procedure TfrmPrincipal.Expedio1Click(Sender: TObject);
 begin
-Application.CreateForm(TForm2, Form2);
-form2.show;
+Application.CreateForm(TfrmPesagem, frmPesagem);
+frmPesagem.show;
 end;
 
-procedure TForm1.ToolButton21Click(Sender: TObject);
+procedure TfrmPrincipal.ToolButton21Click(Sender: TObject);
 begin
-if (form2 = Nil) then
-Application.CreateForm(Tform2,form2);
-form2.Show;
+if (frmPesagem = Nil) then
+Application.CreateForm(TfrmPesagem,frmPesagem);
+frmPesagem.Show;
+end;
+
+procedure TfrmPrincipal.Placas1Click(Sender: TObject);
+begin
+if (frmCadPlaca = Nil) then
+Application.CreateForm(TfrmCadPlaca,frmCadPlaca);
+frmCadPlaca.Show;
 end;
 
 end.

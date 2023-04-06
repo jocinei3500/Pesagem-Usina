@@ -1,8 +1,8 @@
-object Form2: TForm2
-  Left = -8
-  Top = -8
-  Width = 1616
-  Height = 876
+object frmPesagem: TfrmPesagem
+  Left = 181
+  Top = 120
+  Width = 1277
+  Height = 753
   Caption = 'Expedi'#231'ao'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,6 +16,7 @@ object Form2: TForm2
   Visible = True
   WindowState = wsMaximized
   OnClose = FormClose
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -72,7 +73,7 @@ object Form2: TForm2
     ParentFont = False
   end
   object Panel1: TPanel
-    Left = -80
+    Left = -136
     Top = 0
     Width = 1553
     Height = 49
@@ -95,7 +96,7 @@ object Form2: TForm2
       TabOrder = 1
     end
   end
-  object Edit1: TEdit
+  object edID: TEdit
     Left = 128
     Top = 64
     Width = 73
@@ -121,7 +122,7 @@ object Form2: TForm2
     ParentFont = False
     TabOrder = 2
   end
-  object DBLookupComboBox1: TDBLookupComboBox
+  object dblMotorista: TDBLookupComboBox
     Left = 592
     Top = 64
     Width = 401
@@ -134,7 +135,7 @@ object Form2: TForm2
     ParentFont = False
     TabOrder = 3
   end
-  object DBLookupComboBox2: TDBLookupComboBox
+  object dblCarreta: TDBLookupComboBox
     Left = 416
     Top = 64
     Width = 89
@@ -154,7 +155,7 @@ object Form2: TForm2
     Height = 81
     TabOrder = 5
     object Label4: TLabel
-      Left = 8
+      Left = 24
       Top = 16
       Width = 87
       Height = 20
@@ -193,7 +194,7 @@ object Form2: TForm2
       ParentFont = False
     end
     object Label7: TLabel
-      Left = 24
+      Left = 40
       Top = 48
       Width = 71
       Height = 20
@@ -218,7 +219,7 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
-    object Edit2: TEdit
+    object edDataEntrada: TEdit
       Left = 120
       Top = 16
       Width = 81
@@ -231,7 +232,7 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 0
     end
-    object Edit3: TEdit
+    object edHoraEntrada: TEdit
       Left = 256
       Top = 16
       Width = 81
@@ -244,16 +245,16 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 1
     end
-    object Memo1: TMemo
+    object edObs: TMemo
       Left = 392
       Top = 16
       Width = 585
       Height = 49
       Lines.Strings = (
-        'Memo1')
+        '')
       TabOrder = 2
     end
-    object Edit4: TEdit
+    object edDataSaida: TEdit
       Left = 120
       Top = 48
       Width = 81
@@ -266,7 +267,7 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 3
     end
-    object Edit5: TEdit
+    object edHoraSaida: TEdit
       Left = 256
       Top = 48
       Width = 81
@@ -287,11 +288,11 @@ object Form2: TForm2
     Height = 81
     TabOrder = 6
     object Label9: TLabel
-      Left = 8
+      Left = 56
       Top = 16
-      Width = 99
+      Width = 53
       Height = 20
-      Caption = 'Nome Cliente:'
+      Caption = 'Cliente:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -300,7 +301,7 @@ object Form2: TForm2
       ParentFont = False
     end
     object Label12: TLabel
-      Left = 8
+      Left = 40
       Top = 48
       Width = 72
       Height = 20
@@ -312,10 +313,10 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
-    object Edit6: TEdit
+    object edIdClienteForn: TEdit
       Left = 120
       Top = 16
-      Width = 81
+      Width = 129
       Height = 24
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -325,10 +326,10 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 0
     end
-    object Edit8: TEdit
+    object edIdTransp: TEdit
       Left = 120
       Top = 48
-      Width = 81
+      Width = 129
       Height = 24
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -338,8 +339,8 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 1
     end
-    object Edit9: TEdit
-      Left = 216
+    object edTransp: TEdit
+      Left = 256
       Top = 48
       Width = 617
       Height = 24
@@ -351,8 +352,8 @@ object Form2: TForm2
       ParentFont = False
       TabOrder = 2
     end
-    object Edit7: TEdit
-      Left = 216
+    object edFornCli: TEdit
+      Left = 256
       Top = 16
       Width = 617
       Height = 24
@@ -425,7 +426,7 @@ object Form2: TForm2
     end
     object Label16: TLabel
       Left = 464
-      Top = 80
+      Top = 56
       Width = 164
       Height = 25
       Caption = 'Peso na Balan'#231'a'
@@ -435,19 +436,6 @@ object Form2: TForm2
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
-    end
-    object Edit10: TEdit
-      Left = 168
-      Top = 16
-      Width = 145
-      Height = 33
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -20
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-      TabOrder = 0
     end
     object Edit11: TEdit
       Left = 168
@@ -460,7 +448,7 @@ object Form2: TForm2
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
     end
     object Edit14: TEdit
       Left = 168
@@ -473,7 +461,7 @@ object Form2: TForm2
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
     end
     object Edit15: TEdit
       Left = 168
@@ -486,18 +474,34 @@ object Form2: TForm2
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
     end
     object Edit13: TEdit
       Left = 432
-      Top = 120
+      Top = 88
       Width = 281
-      Height = 44
-      Font.Charset = DEFAULT_CHARSET
+      Height = 54
+      BiDiMode = bdRightToLeft
+      DragMode = dmAutomatic
+      Font.Charset = ANSI_CHARSET
       Font.Color = clRed
-      Font.Height = -31
+      Font.Height = -40
       Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 3
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 168
+      Top = 16
+      Width = 145
+      Height = 33
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
       ParentFont = False
       TabOrder = 4
     end
@@ -519,6 +523,6 @@ object Form2: TForm2
     TriggersOnRxChar = True
     OnRxChar = ComPort1RxChar
     Left = 1096
-    Top = 32
+    Top = 56
   end
 end
