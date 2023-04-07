@@ -2,7 +2,7 @@ object frmCadPlaca: TfrmCadPlaca
   Left = 358
   Top = 132
   Width = 1012
-  Height = 497
+  Height = 254
   Caption = 'Cadastro de Placas de Ve'#237'culos'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object frmCadPlaca: TfrmCadPlaca
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 15
-    Top = 185
+    Top = 129
     Width = 962
     Height = 65
     TabOrder = 0
@@ -195,24 +195,11 @@ object frmCadPlaca: TfrmCadPlaca
     Left = 15
     Top = 9
     Width = 961
-    Height = 176
+    Height = 112
     TabOrder = 1
-    object Label9: TLabel
-      Left = 104
-      Top = 24
-      Width = 55
-      Height = 16
-      Caption = 'C'#211'DIGO:'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label10: TLabel
       Left = 43
-      Top = 94
+      Top = 54
       Width = 116
       Height = 16
       Caption = 'TIPO DE VE'#205'CULO:'
@@ -225,7 +212,7 @@ object frmCadPlaca: TfrmCadPlaca
     end
     object lbPlaca: TLabel
       Left = 113
-      Top = 62
+      Top = 22
       Width = 46
       Height = 16
       Caption = 'PLACA:'
@@ -236,23 +223,9 @@ object frmCadPlaca: TfrmCadPlaca
       Font.Style = []
       ParentFont = False
     end
-    object edCod: TEdit
-      Left = 209
-      Top = 20
-      Width = 328
-      Height = 24
-      CharCase = ecUpperCase
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMaroon
-      Font.Height = -13
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-    end
     object dbcTipoVeiculo: TDBLookupComboBox
       Left = 208
-      Top = 88
+      Top = 48
       Width = 329
       Height = 28
       Font.Charset = DEFAULT_CHARSET
@@ -264,11 +237,11 @@ object frmCadPlaca: TfrmCadPlaca
       ListField = 'descricao'
       ListSource = data.dsTipoVeiculo
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
     end
     object edPlaca: TEdit
       Left = 209
-      Top = 56
+      Top = 16
       Width = 328
       Height = 24
       CharCase = ecUpperCase
@@ -278,7 +251,7 @@ object frmCadPlaca: TfrmCadPlaca
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
     end
   end
 end

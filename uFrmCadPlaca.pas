@@ -16,10 +16,8 @@ type
     btnFiltro: TBitBtn;
     btnRelatorio: TBitBtn;
     gbConsulta: TGroupBox;
-    Label9: TLabel;
     Label10: TLabel;
     lbPlaca: TLabel;
-    edCod: TEdit;
     dbcTipoVeiculo: TDBLookupComboBox;
     edPlaca: TEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -45,16 +43,13 @@ uses uData;
 
 
 procedure TfrmCadPlaca.cadastrar;
-var
-  id,placa, tipo_veiculo, sql:string;
 begin
-  id:=edCod.Text;
-  placa:=QuotedStr(edPlaca.Text);
-  tipo_veiculo:=dbcTipoVeiculo.keyValue;
-  data.qCadastro.Insert;
-  sql:= 'INSERT INTO placas (id, placa, tipo_veiculo)VALUES('+ id +','+  placa +',' +tipo_veiculo + ')';
-  data.qCadastro.SQL.Add(sql);
+  data.qCadastro.SQL.Text:=('INSERT INTO placas (id, placa, tipo_veiculo) VALUES(:id, :placa, :tipo_veiculo)');
+  data.qCadastro.ParamByName('id').AsString:='null';
+  data.qCadastro.ParamByName('placa').AsString:=edPlaca.Text;
+  data.qCadastro.ParamByName('tipo_veiculo').AsInteger:=StrToInt(dbcTipoVeiculo.KeyValue);
   data.qCadastro.ExecSQL;
+  data.conection.Commit;
 end;
 
 procedure TfrmCadPlaca.FormClose(Sender: TObject;
@@ -67,7 +62,7 @@ end;
 
 procedure TfrmCadPlaca.btnOkClick(Sender: TObject);
 begin
-cadastrar;
+  cadastrar;
 end;
 
 procedure TfrmCadPlaca.FormShow(Sender: TObject);

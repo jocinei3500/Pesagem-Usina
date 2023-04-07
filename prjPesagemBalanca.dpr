@@ -14,9 +14,7 @@ begin
   Application.Initialize;
   Application.Title := 'Sistema de Pesagem - Usina de Afalto Bresola Ltda';
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(Tdata, data);
   Application.CreateForm(TfrmCadMotorista, frmCadMotorista);
-  //Application.CreateForm(TfrmCadPlaca, frmCadPlaca);
-  //Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(Tdata, data);
   Application.Run;
 end.

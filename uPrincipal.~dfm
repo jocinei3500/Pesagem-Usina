@@ -1,8 +1,8 @@
 object frmPrincipal: TfrmPrincipal
-  Left = 170
-  Top = 123
+  Left = 196
+  Top = 115
   Width = 1095
-  Height = 563
+  Height = 642
   Caption = 'Sistema de Pesagem - Usina de afalto Bresola Ltda'
   Color = clBtnFace
   DefaultMonitor = dmMainForm
@@ -17,6 +17,7 @@ object frmPrincipal: TfrmPrincipal
   Position = poDefault
   Visible = True
   WindowState = wsMaximized
+  WindowMenu = Administrao1
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -176,7 +177,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 991
     Top = 35
     Width = 88
-    Height = 469
+    Height = 548
     Align = alRight
     ButtonHeight = 91
     ButtonWidth = 92

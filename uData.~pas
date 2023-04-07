@@ -15,7 +15,6 @@ type
     dscadastro: TDataSource;
     tTipoVeiculo: TZTable;
     dsTipoVeiculo: TDataSource;
-    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,10 +27,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure Tdata.DataModuleCreate(Sender: TObject);
-begin
-  conection.Connected;
-end;
 
 end.

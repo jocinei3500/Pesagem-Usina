@@ -1,8 +1,8 @@
 object data: Tdata
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 269
-  Top = 175
+  Left = 279
+  Top = 152
   Height = 529
   Width = 763
   object conection: TZConnection
@@ -20,8 +20,8 @@ object data: Tdata
     User = 'root'
     Protocol = 'MariaDB-10'
     LibraryLocation = 
-      'C:\Users\User\Documents\Jocinei\programa'#231#227'o\dephi\Pesagem-Usina\' +
-      'data\libMaria\libmariadb.dll'
+      'C:\Users\bruno\Documents\Jocinei\DELPHI\Pesagem-Usina\data\libMa' +
+      'ria\libmariadb.dll'
     Left = 32
     Top = 24
   end

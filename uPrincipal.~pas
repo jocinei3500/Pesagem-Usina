@@ -96,8 +96,12 @@ frmCadPlaca.Show;
 end;
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
+var
+  path:string;
 begin
-data.conection.Connected;
+  path:=extractFileDir(application.ExeName);
+  showmessage(path);
+  data.conection.LibraryLocation:=path+'\data\libMaria\libmariadb.dll';
 end;
 
 end.

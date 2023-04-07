@@ -30,8 +30,13 @@ implementation
 {$R *.dfm}
 
 procedure Tdata.DataModuleCreate(Sender: TObject);
+var
+  path:string;
 begin
-  conection.Connected;
+  path:=ExtractFileDir(getCurrentDir);
+  conection.LibraryLocation:=path+'\pesagem-usina\data\libMaria\libmariadb.dll';
+  conection.Connected:=true;
+
 end;
 
 end.
