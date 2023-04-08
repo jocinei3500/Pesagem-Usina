@@ -1,5 +1,6 @@
 object data: Tdata
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Left = 279
   Top = 152
   Height = 529
@@ -68,40 +69,9 @@ object data: Tdata
   end
   object qCadastro: TZQuery
     Connection = conection
-    Params = <
-      item
-        DataType = ftUnknown
-        Name = 'id'
-        ParamType = ptUnknown
-      end
-      item
-        DataType = ftUnknown
-        Name = 'placa'
-        ParamType = ptUnknown
-      end
-      item
-        DataType = ftUnknown
-        Name = 'tipo_veiculo'
-        ParamType = ptUnknown
-      end>
+    Params = <>
     Left = 168
     Top = 24
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'id'
-        ParamType = ptUnknown
-      end
-      item
-        DataType = ftUnknown
-        Name = 'placa'
-        ParamType = ptUnknown
-      end
-      item
-        DataType = ftUnknown
-        Name = 'tipo_veiculo'
-        ParamType = ptUnknown
-      end>
   end
   object dscadastro: TDataSource
     DataSet = qCadastro
@@ -112,11 +82,22 @@ object data: Tdata
     Connection = conection
     TableName = 'tipo_veiculo'
     Left = 96
-    Top = 216
+    Top = 152
   end
   object dsTipoVeiculo: TDataSource
     DataSet = tTipoVeiculo
     Left = 96
-    Top = 280
+    Top = 216
+  end
+  object tProdutos: TZTable
+    Connection = conection
+    TableName = 'produtos'
+    Left = 168
+    Top = 152
+  end
+  object dsProdutos: TDataSource
+    DataSet = tProdutos
+    Left = 168
+    Top = 216
   end
 end

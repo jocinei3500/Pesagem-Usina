@@ -252,6 +252,10 @@ object frmPrincipal: TfrmPrincipal
           OnClick = Placas1Click
         end
       end
+      object menuMotorista: TMenuItem
+        Caption = 'Motorista'
+        OnClick = menuMotoristaClick
+      end
     end
     object Produo1: TMenuItem
       Caption = 'Produ'#231#227'o'

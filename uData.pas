@@ -15,6 +15,8 @@ type
     dscadastro: TDataSource;
     tTipoVeiculo: TZTable;
     dsTipoVeiculo: TDataSource;
+    tProdutos: TZTable;
+    dsProdutos: TDataSource;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

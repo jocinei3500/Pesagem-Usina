@@ -56,9 +56,11 @@ type
     ImageList2: TImageList;
     Veculos1: TMenuItem;
     Placas1: TMenuItem;
+    menuMotorista: TMenuItem;
     procedure Expedio1Click(Sender: TObject);
     procedure ToolButton21Click(Sender: TObject);
     procedure Placas1Click(Sender: TObject);
+    procedure menuMotoristaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,7 +72,7 @@ var
 
 implementation
 
-uses ufrmPesagem, uData, uFrmCadPlaca;
+uses ufrmPesagem, uData, uFrmCadPlaca, uCadMotorista;
 
 {$R *.dfm}
 
@@ -92,6 +94,13 @@ begin
 if (frmCadPlaca = Nil) then
 Application.CreateForm(TfrmCadPlaca,frmCadPlaca);
 frmCadPlaca.Show;
+end;
+
+procedure TfrmPrincipal.menuMotoristaClick(Sender: TObject);
+begin
+  if (frmCadMotorista = Nil) then
+Application.CreateForm(TfrmCadMotorista,frmCadMotorista);
+frmCadMotorista.Show;
 end;
 
 end.

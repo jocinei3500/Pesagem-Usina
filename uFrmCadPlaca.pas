@@ -44,6 +44,8 @@ uses uData;
 
 procedure TfrmCadPlaca.cadastrar;
 begin
+  data.qCadastro.Close;
+  data.qCadastro.SQL.Text:='';
   data.qCadastro.SQL.Text:=('INSERT INTO placas (id, placa, tipo_veiculo) VALUES(:id, :placa, :tipo_veiculo)');
   data.qCadastro.ParamByName('id').AsString:='null';
   data.qCadastro.ParamByName('placa').AsString:=edPlaca.Text;

@@ -18,7 +18,6 @@ object frmPrincipal: TfrmPrincipal
   Visible = True
   WindowState = wsMaximized
   WindowMenu = Administrao1
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object ToolBar1: TToolBar
@@ -252,6 +251,10 @@ object frmPrincipal: TfrmPrincipal
           Caption = 'Placas'
           OnClick = Placas1Click
         end
+      end
+      object menuMotorista: TMenuItem
+        Caption = 'Motorista'
+        OnClick = menuMotoristaClick
       end
     end
     object Produo1: TMenuItem

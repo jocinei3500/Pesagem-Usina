@@ -75,7 +75,7 @@ begin
     begin
       texto := copy( texto, 2, length( texto ) );
     end;
-    if(length(texto) =0)then
+    if(length(trim(texto)) =0)then
       texto:='0' ;
   result:=texto
 

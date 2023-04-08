@@ -64,6 +64,8 @@ var
   frmPesagem: TfrmPesagem;
 
 implementation
+  uses
+    uData;
 
 {$R *.dfm}
 
@@ -92,6 +94,7 @@ end;
 procedure TfrmPesagem.FormShow(Sender: TObject);
 begin
 ComPort1.Open;
+data.tProdutos.Open;
 end;
 
 procedure TfrmPesagem.ComPort1RxChar(Sender: TObject; Count: Integer);

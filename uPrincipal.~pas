@@ -56,10 +56,11 @@ type
     ImageList2: TImageList;
     Veculos1: TMenuItem;
     Placas1: TMenuItem;
+    menuMotorista: TMenuItem;
     procedure Expedio1Click(Sender: TObject);
     procedure ToolButton21Click(Sender: TObject);
     procedure Placas1Click(Sender: TObject);
-    procedure FormShow(Sender: TObject);
+    procedure menuMotoristaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,13 +96,11 @@ Application.CreateForm(TfrmCadPlaca,frmCadPlaca);
 frmCadPlaca.Show;
 end;
 
-procedure TfrmPrincipal.FormShow(Sender: TObject);
-var
-  path:string;
+procedure TfrmPrincipal.menuMotoristaClick(Sender: TObject);
 begin
-  path:=extractFileDir(application.ExeName);
-  showmessage(path);
-  data.conection.LibraryLocation:=path+'\data\libMaria\libmariadb.dll';
+  if (frmCadMotorista = Nil) then
+Application.CreateForm(TfrmCadMotorista,frmCadMotorista);
+frmCadMotorista.Show;
 end;
 
 end.

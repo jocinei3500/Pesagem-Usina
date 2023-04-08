@@ -15,6 +15,9 @@ type
     dscadastro: TDataSource;
     tTipoVeiculo: TZTable;
     dsTipoVeiculo: TDataSource;
+    tProdutos: TZTable;
+    dsProdutos: TDataSource;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,5 +30,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure Tdata.DataModuleCreate(Sender: TObject);
+var
+  path:string;
+begin
+  path:=ExtractFileDir(getCurrentDir);
+  conection.LibraryLocation:=path+'\pesagem-usina\data\libMaria\libmariadb.dll';
+  conection.Connected:=true;
+
+end;
 
 end.

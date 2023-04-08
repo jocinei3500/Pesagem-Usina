@@ -76,6 +76,8 @@ begin
   data.qCadastro.ParamByName('telefone').AsString:=edTelefone.Text;
   data.qCadastro.ParamByName('cpf').AsString:=edCpf.Text;
   data.qCadastro.ParamByName('rg').AsString:=edRg.Text;
+
+
   data.qCadastro.ExecSQL;
   data.conection.Commit;
   data.qCadastro.Close;
