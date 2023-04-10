@@ -34,6 +34,7 @@ type
   private
     { Private declarations }
     procedure cadastrar;
+    procedure limpar;
   public
     { Public declarations }
   end;
@@ -78,6 +79,11 @@ begin
   data.qCadastro.ParamByName('rg').AsString:=edRg.Text;
   data.qCadastro.ExecSQL;
   data.conection.Commit;
+  if data.qCadastro.RowsAffected >0 then
+    begin
+      showmessage('Cadastro realizado com sucesso!');
+      limpar;
+    end;
   data.qCadastro.Close;
 
 end;
@@ -85,6 +91,17 @@ end;
 procedure TfrmCadMotorista.btnOkClick(Sender: TObject);
 begin
 cadastrar;
+end;
+
+procedure TfrmCadMotorista.limpar;
+begin
+  edNome.Clear;
+  edSobrenome.Clear;
+  edEndereco.Clear;
+  edTelefone.Clear;
+  edCpf.Clear;
+  edRg.Clear;
+  edNome.SetFocus;
 end;
 
 end.

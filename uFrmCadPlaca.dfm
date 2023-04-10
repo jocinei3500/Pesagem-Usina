@@ -1,6 +1,6 @@
 object frmCadPlaca: TfrmCadPlaca
-  Left = 358
-  Top = 132
+  Left = 280
+  Top = 139
   Width = 1012
   Height = 254
   Caption = 'Cadastro de Placas de Ve'#237'culos'

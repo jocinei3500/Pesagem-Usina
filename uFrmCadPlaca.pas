@@ -26,6 +26,7 @@ type
   private
     { Private declarations }
     procedure cadastrar;
+    procedure limpar;
   public
     { Public declarations }
   end;
@@ -52,6 +53,11 @@ begin
   data.qCadastro.ParamByName('tipo_veiculo').AsInteger:=StrToInt(dbcTipoVeiculo.KeyValue);
   data.qCadastro.ExecSQL;
   data.conection.Commit;
+  if data.qCadastro.RowsAffected > 0 then
+    begin
+      showmessage('cadastro realizado com sucesso');
+      limpar;
+    end;
 end;
 
 procedure TfrmCadPlaca.FormClose(Sender: TObject;
@@ -70,6 +76,13 @@ end;
 procedure TfrmCadPlaca.FormShow(Sender: TObject);
 begin
   data.tTipoVeiculo.Open;
+end;
+
+procedure TfrmCadPlaca.limpar;
+begin
+  edPlaca.Clear;
+  dbcTipoVeiculo.KeyValue:=0;
+  edPlaca.SetFocus;
 end;
 
 end.

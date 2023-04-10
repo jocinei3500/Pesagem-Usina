@@ -4,8 +4,8 @@ object frmCadMotorista: TfrmCadMotorista
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'Cadastro de motorista'
-  ClientHeight = 524
-  ClientWidth = 1072
+  ClientHeight = 345
+  ClientWidth = 990
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
