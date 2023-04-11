@@ -47,7 +47,7 @@ object frmPesagem: TfrmPesagem
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 360
+    Left = 408
     Top = 64
     Width = 57
     Height = 20
@@ -60,7 +60,7 @@ object frmPesagem: TfrmPesagem
     ParentFont = False
   end
   object edMotorista: TLabel
-    Left = 520
+    Left = 592
     Top = 64
     Width = 70
     Height = 20
@@ -79,21 +79,19 @@ object frmPesagem: TfrmPesagem
     Height = 49
     Color = clRed
     TabOrder = 0
-    object Button1: TButton
-      Left = 208
+    object SpeedButton1: TSpeedButton
+      Left = 184
       Top = 8
-      Width = 209
+      Width = 273
       Height = 33
-      Caption = 'Entrada'
-      TabOrder = 0
+      Caption = 'ENTRADA'
     end
-    object Button2: TButton
-      Left = 472
+    object SpeedButton2: TSpeedButton
+      Left = 528
       Top = 8
-      Width = 209
+      Width = 273
       Height = 33
-      Caption = 'Sa'#237'da'
-      TabOrder = 1
+      Caption = 'SAIDA'
     end
   end
   object edID: TEdit
@@ -112,18 +110,21 @@ object frmPesagem: TfrmPesagem
   object dblPlaca: TDBLookupComboBox
     Left = 264
     Top = 64
-    Width = 89
+    Width = 113
     Height = 28
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'placa'
+    ListSource = data.dsPlaca
     ParentFont = False
     TabOrder = 2
   end
   object dblMotorista: TDBLookupComboBox
-    Left = 592
+    Left = 672
     Top = 64
     Width = 401
     Height = 28
@@ -132,19 +133,25 @@ object frmPesagem: TfrmPesagem
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'nome;sobrenome'
+    ListSource = data.dsMotorista
     ParentFont = False
     TabOrder = 3
   end
   object dblCarreta: TDBLookupComboBox
-    Left = 424
+    Left = 480
     Top = 64
-    Width = 89
+    Width = 105
     Height = 28
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = []
+    KeyField = 'id'
+    ListField = 'placa'
+    ListSource = data.dsPlaca
     ParentFont = False
     TabOrder = 4
   end
@@ -219,24 +226,22 @@ object frmPesagem: TfrmPesagem
       Font.Style = []
       ParentFont = False
     end
-    object edDataEntrada: TEdit
-      Left = 120
+    object edObs: TMemo
+      Left = 392
       Top = 16
-      Width = 81
-      Height = 24
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -13
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      ParentFont = False
+      Width = 585
+      Height = 49
+      Lines.Strings = (
+        '')
       TabOrder = 0
     end
-    object edHoraEntrada: TEdit
-      Left = 256
+    object DateTimePicker1: TDateTimePicker
+      Left = 112
       Top = 16
-      Width = 81
+      Width = 97
       Height = 24
+      Date = 45027.536531435190000000
+      Time = 45027.536531435190000000
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -245,40 +250,52 @@ object frmPesagem: TfrmPesagem
       ParentFont = False
       TabOrder = 1
     end
-    object edObs: TMemo
-      Left = 392
-      Top = 16
-      Width = 585
-      Height = 49
-      Lines.Strings = (
-        '')
+    object DateTimePicker2: TDateTimePicker
+      Left = 112
+      Top = 48
+      Width = 97
+      Height = 24
+      Date = 45027.536531435190000000
+      Time = 45027.536531435190000000
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
-    object edDataSaida: TEdit
-      Left = 120
-      Top = 48
-      Width = 81
+    object MaskEdit1: TMaskEdit
+      Left = 264
+      Top = 16
+      Width = 72
       Height = 24
+      EditMask = '!90:00;1;_'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'MS Sans Serif'
       Font.Style = []
+      MaxLength = 5
       ParentFont = False
       TabOrder = 3
+      Text = '  :  '
     end
-    object edHoraSaida: TEdit
-      Left = 256
+    object MaskEdit2: TMaskEdit
+      Left = 264
       Top = 48
-      Width = 81
+      Width = 72
       Height = 24
+      EditMask = '!90:00;1;_'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'MS Sans Serif'
       Font.Style = []
+      MaxLength = 5
       ParentFont = False
       TabOrder = 4
+      Text = '  :  '
     end
   end
   object GroupBox2: TGroupBox
@@ -495,7 +512,7 @@ object frmPesagem: TfrmPesagem
     object DBLookupComboBox1: TDBLookupComboBox
       Left = 168
       Top = 16
-      Width = 145
+      Width = 537
       Height = 33
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

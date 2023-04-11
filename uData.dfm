@@ -100,4 +100,26 @@ object data: Tdata
     Left = 168
     Top = 216
   end
+  object dsPlaca: TDataSource
+    DataSet = tPlaca
+    Left = 216
+    Top = 216
+  end
+  object tPlaca: TZTable
+    Connection = conection
+    TableName = 'placas'
+    Left = 216
+    Top = 152
+  end
+  object dsMotorista: TDataSource
+    DataSet = tMotorista
+    Left = 272
+    Top = 216
+  end
+  object tMotorista: TZTable
+    Connection = conection
+    TableName = 'motoristas'
+    Left = 272
+    Top = 152
+  end
 end

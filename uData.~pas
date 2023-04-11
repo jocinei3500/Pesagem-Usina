@@ -17,6 +17,10 @@ type
     dsTipoVeiculo: TDataSource;
     tProdutos: TZTable;
     dsProdutos: TDataSource;
+    dsPlaca: TDataSource;
+    tPlaca: TZTable;
+    dsMotorista: TDataSource;
+    tMotorista: TZTable;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

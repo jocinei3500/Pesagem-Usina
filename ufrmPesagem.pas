@@ -4,13 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, DBCtrls, CPort;
+  Dialogs, StdCtrls, ExtCtrls, DBCtrls, CPort, Mask, ComCtrls, Buttons;
 
 type
   TfrmPesagem = class(TForm)
     Panel1: TPanel;
-    Button1: TButton;
-    Button2: TButton;
     Label1: TLabel;
     edID: TEdit;
     Label2: TLabel;
@@ -21,15 +19,11 @@ type
     dblCarreta: TDBLookupComboBox;
     GroupBox1: TGroupBox;
     Label4: TLabel;
-    edDataEntrada: TEdit;
     Label5: TLabel;
-    edHoraEntrada: TEdit;
     edObs: TMemo;
     Label6: TLabel;
     Label7: TLabel;
-    edDataSaida: TEdit;
     Label8: TLabel;
-    edHoraSaida: TEdit;
     GroupBox2: TGroupBox;
     Label9: TLabel;
     Label12: TLabel;
@@ -49,6 +43,12 @@ type
     Label16: TLabel;
     ComPort1: TComPort;
     DBLookupComboBox1: TDBLookupComboBox;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    MaskEdit1: TMaskEdit;
+    MaskEdit2: TMaskEdit;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure ComPort1RxChar(Sender: TObject; Count: Integer);
@@ -115,6 +115,9 @@ end;
 procedure TfrmPesagem.FormCreate(Sender: TObject);
 begin
   Syslocale.MiddleEast:=true;
+  data.tPlaca.Open;
+  data.tMotorista.Open;
+  data.tProdutos.Open;
 end;
 
 end.
