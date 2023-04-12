@@ -42,6 +42,10 @@ begin
   path:=ExtractFileDir(getCurrentDir);
   conection.LibraryLocation:=path+'\pesagem-usina\data\libMaria\libmariadb.dll';
   conection.Connected:=true;
+  tProdutos.Open;
+  tPlaca.Open;
+  tTipoVeiculo.Open;
+  tMotorista.Open;
 
 end;
 

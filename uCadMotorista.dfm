@@ -4,7 +4,7 @@ object frmCadMotorista: TfrmCadMotorista
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'Cadastro de motorista'
-  ClientHeight = 345
+  ClientHeight = 547
   ClientWidth = 990
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@ object frmCadMotorista: TfrmCadMotorista
   TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 15
-    Top = 265
+    Top = 457
     Width = 962
     Height = 65
     TabOrder = 0
@@ -362,5 +362,69 @@ object frmCadMotorista: TfrmCadMotorista
       ParentFont = False
       TabOrder = 5
     end
+  end
+  object dbgData: TDBGrid
+    Left = 16
+    Top = 264
+    Width = 961
+    Height = 185
+    DataSource = data.dsMotorista
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Title.Caption = 'C'#243'd'
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Title.Caption = 'Nome'
+        Width = 120
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sobrenome'
+        Title.Caption = 'Sobrenome'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'endereco'
+        Title.Caption = 'Endere'#231'o'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telefone'
+        Title.Caption = 'Telefone'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cpf'
+        Title.Caption = 'CPF'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'rg'
+        Title.Caption = 'RG'
+        Width = 80
+        Visible = True
+      end>
   end
 end

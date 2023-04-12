@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DBCtrls, Buttons;
+  Dialogs, StdCtrls, DBCtrls, Buttons, Grids, DBGrids;
 
 type
   TfrmCadMotorista = class(TForm)
@@ -28,6 +28,7 @@ type
     edCpf: TEdit;
     Label4: TLabel;
     edRg: TEdit;
+    dbgData: TDBGrid;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btFecharClick(Sender: TObject);
     procedure btnOkClick(Sender: TObject);
@@ -82,6 +83,7 @@ begin
   if data.qCadastro.RowsAffected >0 then
     begin
       showmessage('Cadastro realizado com sucesso!');
+      data.tMotorista.Refresh;
       limpar;
     end;
   data.qCadastro.Close;

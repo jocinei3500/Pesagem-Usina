@@ -56,6 +56,7 @@ begin
   if data.qCadastro.RowsAffected > 0 then
     begin
       showmessage('cadastro realizado com sucesso');
+      data.tPlaca.Refresh;
       limpar;
     end;
 end;

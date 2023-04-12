@@ -99,8 +99,8 @@ end;
 procedure TfrmPrincipal.menuMotoristaClick(Sender: TObject);
 begin
   if (frmCadMotorista = Nil) then
-Application.CreateForm(TfrmCadMotorista,frmCadMotorista);
-frmCadMotorista.Show;
+  Application.CreateForm(TfrmCadMotorista,frmCadMotorista);
+  frmCadMotorista.Show;
 end;
 
 end.

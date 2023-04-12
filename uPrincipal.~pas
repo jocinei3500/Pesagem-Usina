@@ -72,7 +72,7 @@ var
 
 implementation
 
-uses ufrmPesagem, uData, uFrmCadPlaca;
+uses ufrmPesagem, uData, uFrmCadPlaca, uCadMotorista;
 
 {$R *.dfm}
 
